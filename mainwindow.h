@@ -2,22 +2,22 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
-QT_END_NAMESPACE
+#include <QWidget>
+#include <QString>
+#include <QTcpSocket>
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+private:
+    int windowwidth = 500;
+    int windowheight = 500;
+    QString windowname;
+    QTcpSocket *socket;
+
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-private:
-    Ui::MainWindow *ui;
 };
+
 #endif // MAINWINDOW_H
